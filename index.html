@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tienda de mascotas del metaverso">
+  <meta name="keywords" content="metaverso">
+  <title>TIENDA DE MASCOTAS DEL METAVERSO</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="totalweb">
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="#carritoDeCompras"><img src="./img/compra.png" alt="my cart"
+                id="iconoCarrito" class="icono-carrito"><span id="countering" class="contadorCarrito"></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="portada">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/portada.jpg" class="d-block w-100" alt="Portada" />
+        </div>
+      
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">next</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">prev</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="metaversopets">
+      <h2>🐈TIENDA DE MASCOTAS DEL METAVERSO🦔</h2>
+    </div>
+
+    <div class="flex-decoracion">
+      <div class="mypetitem">
+        <p>💫Elije tu mascota preferida💫</p>
+        
+      </div>
+      <div class="mypetitem">
+        <p>🆕Comienza un nueva vida en el metaverso🔥</p>
+              </div>
+      <div class="mypetitem">
+        <p> 🐶Instrucciones para tu mascota🐻</p>
+
+      </div>
+    </div>
+
+    <div class="tarjetas" id="mylistPets"></div>
+
+    <div id="carritoDeCompras" class="carrito-compras">
+      <div class="header-carrito">🛒My Cart🛒
+        <button class="boton" id="vaciarCarrito">❌Cancel❌</button>
+      </div>
+      <div id="petsinCart"></div>
+      <h3 class="footer-carrito">Total de la compra: <span id="totalCompra">0</span></h3>
+      <button id='completarCompra' class="boton">🛍️Comprar🛍️</button>
+    </div>
+  </main>
+
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
+//My Pet Meta Shop Structure
+
+class metaversPets {
+    constructor (id,name,img, price, info, available){
+        this.id = id;
+        this.name = name;
+        this.img = img;
+        this.price = price;
+        this.info = info;
+        this.available = available;
+    }
+  }
+  
+const pets = [];
+
+let dog = new metaversPets (1,'Perro','./img/petshop/dog.jpg', 5, 'pet',1);
+pets.push (dog)
+let cat = new metaversPets (2, 'Gato','./img/petshop/cat.jpg', 5, 'pet',1);
+pets.push (cat)
+let pig = new metaversPets (3, 'Cerdo','./img/petshop/pig.jpg', 5, 'pet',1);
+pets.push (pig)
+let dear = new metaversPets (4, 'Venado','./img/petshop/dear.jpg', 5, 'pet',1);
+pets.push (dear)
+let dodo = new metaversPets (5, 'Pajaro Dodo','./img/petshop/dodo.jpg', 5, 'pet',1);
+pets.push (dodo)
+let dolphin = new metaversPets (6, 'Delfin','./img/petshop/dolphin.jpg', 5, 'pet',1);
+pets.push (dolphin)
+let duck = new metaversPets (7, 'Pato','./img/petshop/duck.jpg', 5, 'pet',1);
+pets.push (duck)
+let ferret = new metaversPets (8, 'Huron','./img/petshop/ferret.jpg', 5, 'pet',1);
+pets.push (ferret)
+let fox = new metaversPets (9, 'Zorro','./img/petshop/fox.jpg', 5, 'pet',1);
+pets.push (fox)
+let bear = new metaversPets (10, 'Oso','./img/petshop/bear.jpg', 5, 'pet',1);
+pets.push (bear)
+let wildcat = new metaversPets (11, 'Lince','./img/petshop/wildcat.jpg', 5, 'pet',1);
+pets.push (wildcat)
+let snake = new metaversPets (12, 'Serpiente','./img/petshop/snake.jpg', 5, 'pet',1);
+pets.push (snake) 
+  
+  
+const mylistPets = document.getElementById('mylistPets');
+  
+pets.forEach((pet) => {
+    const myPet = document.createElement('div');
+    myPet.className = 'tarjetaProducto'
+    myPet.innerHTML = `
+        <div class='datosTarjeta'>
+        <div class="card-body">
+        <img src="${pet.img}" class= "imagenesProductos">
+        <h3 class="card-title"> ${pet.name} </h3>
+        <p class="card-text-precio"> $${pet.price} </p>
+        <p class='card-text-descripcion'>${pet.info}</p>
+        <button id="boton${pet.id}" class="boton">Añadir➕</button>
+        </div>
+        </div>`;
+
+    mylistPets.append(myPet);
+
+    const boton = document.getElementById(`boton${pet.id}`);
+    boton.addEventListener('click', () => {
+      addmyPet(pet.id);
+    });
+  });
+  
+  const myCart = [];
+  const petsAdded = document.getElementById('petsAdded');
+  const countering = document.getElementById ('countering')
+  
+  const counteringPets = ()=>{
+  countering.style.display = 'block'
+  countering.innerText = myCart.length
+  }
+  
+  
+  const addmyPet = (id) => {
+    const pet = pets.find((pet) => pet.id === id);
+    const petsinCart = myCart.find((pet) => pet.id === id);
+    if (petsinCart) {
+      petsinCart.available++;
+    } else {
+      myCart.push(pet);
+    }
+    newpetsinCart();
+    counteringPets ();
+  };
+  
+
+function newpetsinCart() {
+    let actualizar = '';
+    myCart.forEach((pet) => {
+        actualizar += `
+        <div class="contenido-carrito">
+        <h3 class="itemCarritoTitulo"> ${pet.name} </h3>
+        <p class="itemCarrito">$${pet.price}</p>
+        <p class= "itemCarrito">${pet.available}</p>
+        <button onClick = "eliminarDelCarrito(${pet.id})" class="boton">❌</button>
+        </div>`;
+    });
+    
+  petsAdded.innerHTML = actualizar;
+  calcularTotalCompra();
+}
+
+const eliminarDelCarrito = (id) => {
+    const pet = myCart.find((pet) => pet.id === id);
+    myCart.splice(myCart.indexOf(pet), 1);
+    newpetsinCart();
+    counteringPets ();
+  };
+  
+  const vaciarCarrito = document.getElementById('vaciarCarrito');
+  vaciarCarrito.addEventListener('click', () => {
+    myCart.splice(0, myCart.length);
+    newpetsinCart();
+    counteringPets ();
+  });
+  
+  const totalCompra = document.getElementById('totalCompra');
+  const completar = document.getElementById ('completarCompra')
+  
+  const calcularTotalCompra = () => {
+    let total = 0
+    myCart.forEach((pet) => {
+      total += pet.price * pet.available;
+    });
+    totalCompra.innerHTML = total;
+
+   if (total !== 0){
+      completar.addEventListener ('click', completarForm)
+    }
+  };
+
+  function completarForm (){
+    let datosUsuario = document.createElement ('div')
+    datosUsuario.className = 'datos-usuario'
+    datosUsuario.innerHTML = `
+      <h3 class= 'titulo'>📞 Ingresa tus datos🏚️</h3>
+      <input id=nombreUsuario class= 'inputDatos' placeholder=' nombre👨‍👩‍👦'></input>
+      <input id=apellidoUsuario class= 'inputDatos' placeholder='apellido👨‍👩‍👦'></input>
+      <input id=telefonoUsuario  class= 'inputDatos' placeholder='telefono📞'></input>
+      <input id=correoUsuario class= 'inputDatos' placeholder=' correo electronico📧'></input>
+      <input id=direccionUsuario class= 'inputDatos' placeholder='direccion🏚️'></input>
+      <button id=botonEnviarDatos class='boton'>🟢Enviar🟢</button>
+      `
+      carritoDeCompras.append (datosUsuario); 
+      completar.removeEventListener ('click', completarForm)
+
+      let nombreUsuario = document.getElementById ('nombreUsuario');
+      let apellidoUsuario = document.getElementById ('apellidoUsuario');
+      let telefonoUsuario = document.getElementById ('telefonoUsuario');
+      let correoUsuario = document.getElementById ('correoUsuario');
+      let direccionUsuario = document.getElementById ('direccionUsuario');
+      let botonEnviar = document.getElementById ('botonEnviarDatos');  
+
+      botonEnviar.addEventListener ('click', function final (){
+        const datosIngresados = {
+        nombre: nombreUsuario.value,
+        apellido: apellidoUsuario.value,
+        telefono: telefonoUsuario.value,
+        correo: correoUsuario.value,
+        direccion: direccionUsuario.value,
+       }
+      
+      localStorage.setItem ('DatosCliente', JSON.stringify (datosIngresados))
+      
+      if (nombreUsuario.value === '' || apellidoUsuario.value === '' || telefonoUsuario.value === '' || correoUsuario.value === '' || direccionUsuario.value === ''){
+        alert ('🐲No ingresaste tu informacion🐲')
+      } else {
+        let divFinal = document.createElement ('div')
+        divFinal.className = 'div-final'
+        divFinal.innerHTML = `
+        <p class= 'texto'>😃Gracias por tu compra😃 ${JSON.parse(localStorage.getItem("DatosCliente")).nombre}!</p>
+        <p class= 'texto'>🐕Tu mascota sera enviada a tu metaverso registrado en🐕 ${JSON.parse(localStorage.getItem("DatosCliente")).direccion}.
+        💓Gracias por confiar en PetMetaShop💓.
+        </p>
+        `
+        carritoDeCompras.append (divFinal)
+        botonEnviar.removeEventListener("click", final);
+      }
+    })
+  } 
+
+   
+
+
+
+  
+ 
+
+
+  
+
+    
